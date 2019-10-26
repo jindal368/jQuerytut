@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>JQUERY | SELECTOR</title>
+    <title>JQUERY | SELECTOR | Events</title>
 <script src="file:///C:/Users/NITESH/Documents/Desktop/jQuery/jquery.js"></script>
 <style>
 header
@@ -52,6 +52,13 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint corporis hic, arch
 <a href="">Yahoo</a>
 
 <a href="#">Google</a>
+<!--
+    now we study the event handler in jquery
+-->
+
+
+<button id="btn1">Button 1</button>
+<button id="btn2">Button 2</button>
 </div>
 <script>
 $(document).ready(function()
@@ -70,6 +77,43 @@ $(document).ready(function()
     $('[href]').css('color','red');
     $('a[href="#"]').css('color','green');
     //$('*').hide();
+/*
+    $('#btn1').click(function()
+    {
+//alert('button clicked');
+
+
+$('.para1').hide();
+    });
+
+    $('#btn2').click(function()
+    {
+//alert('button clicked');
+$('.para1').show();
+    });
+
+
+*/
+//same effect can be created with the help of 
+
+/*$('#btn1').dblclick(function()
+    {
+//alert('button clicked');
+$('.para1').toggle();
+    });
+//now hover is not particularly a event 
+    $('#btn1').on('hover',function()
+    {
+//alert('button clicked');
+$('.para1').toggle();
+    });
+*/
+
+    $('#btn1').hover(function()
+    {
+//alert('button clicked');
+$('.para1').toggle();
+    });
 })
 </script>    
 </body>
