@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JQUERY | SELECTOR</title>
+<script src="file:///C:/Users/NITESH/Documents/Desktop/jQuery/jquery.js"></script>
+<style>
+header
+{
+    font-size :30px;
+    text-align: center;
+    color: aliceblue;
+    background-color: black;
+}
+
+</style>
+</head>
+<body>
+<header>JQuery Crash Course</header>
+<div id="container" style="font-family: monospace;font-size: 20px;">
+
+    <h1 class="heading1">
+        Heading 1
+        </h1>
+    <p class="para1">
+         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias nulla dicta, repellendus alias cum illo pariatur,<span>Lorem ipsum dolor sit amet.</span> odio vel incidunt fugit a accusamus praesentium molestiae debitis ducimus accusantium aliquid. Aut, sapiente!
+    </p>
+
+
+<h1 class="heading2">Heading 2</h1>
+    <p class="para2">
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint corporis hic, architecto magni esse quod!<span>Lorem ipsum dolor sit amet.</span> Incidunt aliquid accusantium officia voluptates sunt? Iure velit veritatis maxime optio minima quis quaerat maiores?
+    </p>
+
+
+<ul id="list" style="list-style: none;">
+    <li>List Item</li>
+    <li>List Item</li>
+    <li>List Item</li>
+    <li>List Item</li>
+    <li>List Item</li>
+    
+
+</ul>
+
+<input type="submit" value="butt1">
+<input type="button" value="butt1">
+<input type="text">
+
+<a href="">Yahoo</a>
+
+<a href="#">Google</a>
+</div>
+<script>
+$(document).ready(function()
+{
+
+    //$('h1').hide(); this will remove the headings 
+    //now h1 tag will include both the headings now we only want to hide heading 2
+    //$('.para2').hide();
+    //$('h1.heading2').hide();
+    $('p span').css('color','red');
+    $('ul#list li:first').css('color','red');
+    $('ul#list li:last').css('color','red');
+    $('ul#list li:even').css('background-color','lightgrey');
+    //   :this sign is used to grab type of that button
+    //$(':button').hide();
+    $('[href]').css('color','red');
+    $('a[href="#"]').css('color','green');
+    //$('*').hide();
+})
+</script>    
+</body>
+</html>
