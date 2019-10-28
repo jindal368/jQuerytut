@@ -10,15 +10,24 @@
 header
 {
     font-size :30px;
+   
     text-align: center;
     color: aliceblue;
     background-color: black;
 }
-
+.myClass
+{
+    font-family: monospace;
+    background-color: #ccc;
+    color: red;
+}
 </style>
 </head>
 <body>
-<header>JQuery Crash Course</header>
+<header>JQuery Crash Course | Dom Manipulation | Events | Selectors</header>
+<div style="justify-content: center;padding:20px;justify-items: center;">
+<img src="jQuery_use.jpeg" style="display: block;">
+</div>
 <div id="container" style="font-family: monospace;font-size: 20px;">
 
     <h1 class="heading1">
@@ -34,13 +43,13 @@ header
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint corporis hic, architecto magni esse quod!<span>Lorem ipsum dolor sit amet.</span> Incidunt aliquid accusantium officia voluptates sunt? Iure velit veritatis maxime optio minima quis quaerat maiores?
     </p>
 
-
+<input type="text" id="new">
 <ul id="list" style="list-style: none;">
-    <li>List Item</li>
-    <li>List Item</li>
-    <li>List Item</li>
-    <li>List Item</li>
-    <li>List Item</li>
+    <li>List Item 1</li>
+    <li>List Item 2</li>
+    <li>List Item 3</li>
+    <li>List Item 4</li>
+    <li>List Item 5</li>
     
 
 </ul>
@@ -51,14 +60,39 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint corporis hic, arch
 
 <a href="">Yahoo</a>
 
-<a href="#">Google</a>
+<a href="google.com" id="google">Google</a>
 <!--
     now we study the event handler in jquery
 -->
+<hr>
+<h2 id="mydiv">
 
-
+</h2>
+<hr>
 <button id="btn1">Button 1</button>
 <button id="btn2">Button 2</button>
+<h1 id=cords>
+
+</h1>
+<hr>
+<form id="form">
+    <label>Name</label>
+    <input type="text" id="name" name="name">
+    
+    <br>
+    <label>Email</label>
+    <input type="email" id="email" name="email">
+    <br>
+    <label>
+        Gender
+    </label>
+    <select id="gender" name="gender">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+    </select>
+    <br>
+    <input type="submit" value="Submit">
+</form>
 </div>
 <script>
 $(document).ready(function()
@@ -108,12 +142,132 @@ $('.para1').toggle();
 $('.para1').toggle();
     });
 */
-
+/*
     $('#btn1').hover(function()
     {
 //alert('button clicked');
 $('.para1').toggle();
+    });*/
+
+
+    //hover collection of 2 events mouseenter and mouseleave mouseup and mousedown
+    //events are mouseup,mouseenter etc.
+   
+   /* $('#btn1').on(events,function()
+    {
+//alert('button clicked');
+$('.para1').hide();
     });
+*/
+/*
+
+$('#btn1').click(function(e)
+{
+    console.log(e.currentTarget.id);
+    console.log(e.currentTarget.innerHTML);
+    console.log(e.currentTarget.outerHTML);
+});
+
+$('#btn1').on('mousemove',function(e)
+{
+console.log('Cords Y : '+e.clientY+' Cords X : '+e.clientX);
+
+});
+
+$(document).on('mousemove',function(e)
+{
+$('#cords').html('Cords Y : '+e.clientY+' Cords X : '+e.clientX);
+});
+
+
+$('input').focus(function()
+{
+    //alert('hello');
+    //$('input#name').css('background','pink');
+    $(this).css('background','pink');
+
+})
+$('input').blur(function()
+{
+    //alert('hello');
+    //$('input#name').css('background','pink');
+   $(this).css('background','white');
+
+})
+//var c=0
+$('input').keyup(function(e){
+    //c++;
+    //console.log('keyup');
+    var c='';
+    c=e.target.value;
+    console.log(c);
+})
+
+$('select#gender').change(function(e)
+{
+//alert('hello'); 
+alert(e.target.value);
+})
+
+$('#form').submit(function(e)
+{
+    e.preventDefault();
+    var name=$('input#name').val();
+    console.log(name);
+console.log('submitted');
+})
+
+*/
+/*
+$('#btn1').click(function()
+{
+    $('body').css({background:'#ccc',color:'red'});
+});
+*/
+//addClass and removeClass already done 
+/*$('a').attr('target','_blank');
+$('#btn1').click(function()
+{
+  $('p.para2').toggleClass('myClass');
+
+})
+var content=$('#mydiv').text();
+console.log(content);
+$('#mydiv').html('<h3>hello world</h3>');
+
+$('ul').append('<li>Append list </li>');
+$('ul').prepend('<li>Prepend list </li>');
+$('.para1').appendTo('.para2');
+$('.para2').prependTo('.para1');
+$('ul').before('hello');
+$('ul').after('<h1>world</h1>');
+$('ul').empty();//remove the list elements
+$('ul').detach();//remove the ul tag from documents content of browser
+alert($('#google').attr('href'));
+//remove attribute of target="_blank"
+$('a').removeAttr('target');
+$('p').wrap('<h1>');
+$('p').wrapAll('<h1>');//wrap all p one's in one h1 tag
+$('#new').keyup(function(e)
+{
+var code=e.which();
+if(code==13)
+{
+    e.preventDefault();
+    $('ul').append('<li>'+e.target.value+'</li>');
+}
+});*/
+var images=[];
+var myArr=['ram','nitesh','anmol','suhail','vishesh'];
+$.each(myArr,function(i,val)
+{
+    console.log(i+' '+val);
+});
+
+var newArr=$('ul#list li').toArray();
+console.log(newArr);
+
+
 })
 </script>    
 </body>
